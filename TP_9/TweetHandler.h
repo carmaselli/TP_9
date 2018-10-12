@@ -4,13 +4,13 @@
 
 using namespace std;
 
-class TwitHandler
+class TweetHandler
 {
 public:
-	TwitHandler();
-	TwitHandler(char * accaunt, int twitsN);
-	TwitHandler(char * accaunt);
-	~TwitHandler();
+	TweetHandler();
+	TweetHandler(char * accaunt, int twitsN);
+	TweetHandler(char * accaunt);
+	~TweetHandler();
 
 	void setAccountSource(char * accaunt);
 	void getToken();
