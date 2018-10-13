@@ -1,6 +1,7 @@
 #pragma once
 #include "URLHandler.h"
 #include "json.hpp"
+#include <vector>
 
 using namespace std;
 using json = nlohmann::json;
@@ -17,9 +18,8 @@ public:
 
 	void setAccountSource(char * accaunt_);
 	void setTweetsAmount(int tweetsN_);
-	void getToken();
-	void isOk();
-	Error getError();
+	void setUpTwitterToken();
+	void getTweetsList();
 
 private:
 	string APIKey;
@@ -27,4 +27,8 @@ private:
 	string accaunt;
 	int tweetsN;
 	json parser;
+	// The token received from Twitter will be saved here.
+	string token;
+	// List containing all the tweets as strings.
+	vector<string>  tweetsList;
 };
