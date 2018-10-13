@@ -119,14 +119,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TweetHandler.cpp" />
+    <ClCompile Include="URLHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Error.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="TweetHandler.h" />
+    <ClInclude Include="URLHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

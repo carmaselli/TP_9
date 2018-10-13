@@ -1,30 +1,28 @@
 #pragma once
-#include <string>
-#include <curl/curl.h>
+#include "URLHandler.h"
+#include "json.hpp"
 
 using namespace std;
+using json = nlohmann::json;
 
-class TweetHandler
+// This is a class meant for handling Twitter's API specific requests. 
+class TweetHandler : 
+	public URLHandler
 {
 public:
 	TweetHandler();
-	TweetHandler(char * accaunt, int twitsN);
-	TweetHandler(char * accaunt);
-	~TweetHandler();
+	TweetHandler(char * accaunt_, int tweetsN_);
+	TweetHandler(char * accaunt_);
+	virtual ~TweetHandler();
 
-	void setAccountSource(char * accaunt);
+	void setAccountSource(char * accaunt_);
+	void setTweetsAmount(int tweetsN_);
 	void getToken();
 
-public:
+private:
 	string APIKey;
 	string APISecretKey;
-	// URL that will be sent to Twitter for the request.
-	string query;
-	// The token received from Twitter will be saved here.
-	string token;
-	// The curl response will be saved here to see if there was an error while sending the request.
-	CURLcode res;
-	// Request configurations will he saved here.
-	CURL * curl;
-
+	string accaunt;
+	int tweetsN;
+	json parser;
 };
