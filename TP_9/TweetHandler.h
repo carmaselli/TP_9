@@ -18,6 +18,8 @@ public:
 	void setAccountSource(char * accaunt_);
 	void setTweetsAmount(int tweetsN_);
 	void getToken();
+	void isOk();
+	Error getError();
 
 private:
 	string APIKey;
