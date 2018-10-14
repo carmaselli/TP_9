@@ -1,6 +1,7 @@
 #pragma once
 #include "URLHandler.h"
 #include "json.hpp"
+#include "Tweet.h"
 #include <vector>
 
 using namespace std;
@@ -12,23 +13,32 @@ class TweetHandler :
 {
 public:
 	TweetHandler();
-	TweetHandler(char * accaunt_, int tweetsN_);
-	TweetHandler(char * accaunt_);
+	TweetHandler(char * account_, int tweetsN_);
+	TweetHandler(char * account_);
 	virtual ~TweetHandler();
 
-	void setAccountSource(char * accaunt_);
+	void setAccountSource(char * account_);
 	void setTweetsAmount(int tweetsN_);
-	void setUpTwitterToken();
-	void getTweetsList();
+	// Must be called before any other request, to get the token from Twitter.
+	bool createTwitterToken();
+	// To be called after setting new account and/or tweetsN.
+	void updateURL();
+
+	// To be called after creating the token.
+	vector<Tweet> getTweetsList();
 
 private:
+	void initQuery();
+
 	string APIKey;
 	string APISecretKey;
-	string accaunt;
+	string account;
 	int tweetsN;
-	json parser;
+	json TwitterAnswer;
 	// The token received from Twitter will be saved here.
 	string token;
 	// List containing all the tweets as strings.
-	vector<string>  tweetsList;
+	vector<Tweet> tweetsList;
+	// This is the page from the API where the object will get the tweets from.
+	string query;
 };

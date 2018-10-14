@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-enum class ErrType{NO_ERRORS, ERR_WHILE_CURL_INIT, ERR_WHILE_EASY_PERFORM, ERR_WHILE_MULTI_PERFORM};
+enum class ErrType{NO_ERRORS, ERR_WHILE_CURL_INIT, ERR_WHILE_EASY_PERFORM, ERR_WHILE_MULTI_PERFORM, ERR_NO_URL_GIVEN};
 class URLError
 {
 public:

@@ -34,9 +34,7 @@ public:
 	bool isOk();
 	URLError getError();
 
-private:
-	// Callback function to register curl's response.
-	static size_t curlCallback(void *contents, size_t size, size_t nmemb, void *userp);
+protected:
 	// To be called by the easyPerform. Contains the basic options for performing and performs.
 	bool basicEasyPerform();
 	// To be called by the multiPerform. Contains the basic options for performing.
