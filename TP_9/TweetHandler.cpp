@@ -73,14 +73,23 @@ vector<Tweet> TweetHandler::getTweetsList()
 		TwitterAnswer = json::parse(response);				// Parsing Twitter's response as a JSON object.
 		try
 		{
-			for (auto tweet : TwitterAnswer)
+			for (auto tweetElement : TwitterAnswer)
 			{
+				string tweet = tweetElement["text"];
+				int extended = tweet.find("https");
+				tweet = tweet.substr(0, extended);			// The URL to continue reading the tweet gets eliminated.
+
+				string twitter = tweetElement["screen_name"];
+				string tweetedAt = tweetElement["created_at"];
+
+				tweetsList.push_back(Tweet(tweet, twitter, tweetedAt));
 
 			}
 		}
 		catch (exception& e)
 		{
-
+			err.setErrType(ErrType::CHILD_ERROR);
+			err.setErrDetail("Exception raised while parsing Twitter's JSON.");
 		}
 	}
 }
