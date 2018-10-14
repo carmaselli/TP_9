@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
-#include "BasicLCD.h"
-#include "Error.h"
+#include <vector>
+#include "Display\BasicLCD.h"
+#include "Display/ErrLCD.h"
+#include "Tweet.h"
 
 class DisplayUpdater
 {
@@ -10,25 +12,24 @@ public:
 	DisplayUpdater(BasicLCD * display, int fps = 60);
 	~DisplayUpdater();
 
-	void setNewTweet(); // ver que formato de cosa recibe
+	void setTweets(vector<Tweet>& tweetList); // ver que formato de cosa recibe
 	
-	//alternativa a setTweet
-	//void setFirstLine(string);
-	//void setSecondLineContent(string);
-
+	
 	void incSpeed();
 	void decSpeed();
 	void repeatTweet();
 
-	void refreshDisplay();
+	bool refreshDisplay(void);
 
 	void setWaiting(std::string accountName); // este seria para el principio
 	void stillWaiting(void);// esta es la que va a ir moviendo la señal
 	
 	bool isOk(void);
 	std::string getError();
-	//    \|/-
+	
 private:
+
+	void setNextTweet(void);
 
 	int speed; //con 60FPS, cada cuantos FPS se refreshea
 	int rRate; // cuantos FPS le faltan para volver a refrescar
@@ -39,9 +40,10 @@ private:
 	std::string secondLine; // tweet a mostrar
 	
 	size_t secondLinePos; // posicion del tweet a partir de la cual estoy mostrando
+	vector<Tweet> internalTweetList;
+	ErrLCD posibleErr;
 
-	Error posibleErr;
-
+	char tweetNum;
 	char state;
 };
 

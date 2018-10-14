@@ -24,25 +24,25 @@
     <ClCompile Include="URLHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="URLError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="DisplayUpdater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BasicLCD.cpp">
+    <ClCompile Include="Display\BasicLCD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="delay.cpp">
+    <ClCompile Include="Display\delay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ErrLCD.cpp">
+    <ClCompile Include="Display\ErrLCD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FTDIHandler.cpp">
+    <ClCompile Include="Display\FTDIHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HD44780LCD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="URLError.cpp">
+    <ClCompile Include="Display\HD44780LCD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tweet.cpp">
@@ -62,28 +62,28 @@
     <ClInclude Include="URLHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="URLError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="DisplayUpdater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BasicLCD.h">
+    <ClInclude Include="Display\BasicLCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="delay.h">
+    <ClInclude Include="Display\delay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ErrLCD.h">
+    <ClInclude Include="Display\ErrLCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ftd2xx.h">
+    <ClInclude Include="Display\ftd2xx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FTDIHandler.h">
+    <ClInclude Include="Display\FTDIHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HD44780LCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="URLError.h">
+    <ClInclude Include="Display\HD44780LCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tweet.h">

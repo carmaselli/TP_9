@@ -119,8 +119,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="DisplayUpdater.cpp" />
+    <ClCompile Include="Display\BasicLCD.cpp" />
+    <ClCompile Include="Display\delay.cpp" />
+    <ClCompile Include="Display\ErrLCD.cpp" />
+    <ClCompile Include="Display\FTDIHandler.cpp" />
+    <ClCompile Include="Display\HD44780LCD.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tweet.cpp" />
     <ClCompile Include="TweetHandler.cpp" />
     <ClCompile Include="URLError.cpp" />
     <ClCompile Include="URLHandler.cpp" />
@@ -129,8 +135,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Error.h" />
+    <ClInclude Include="DisplayUpdater.h" />
+    <ClInclude Include="Display\BasicLCD.h" />
+    <ClInclude Include="Display\delay.h" />
+    <ClInclude Include="Display\ErrLCD.h" />
+    <ClInclude Include="Display\ftd2xx.h" />
+    <ClInclude Include="Display\FTDIHandler.h" />
+    <ClInclude Include="Display\HD44780LCD.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="Tweet.h" />
     <ClInclude Include="TweetHandler.h" />
     <ClInclude Include="URLError.h" />
     <ClInclude Include="URLHandler.h" />
