@@ -13,18 +13,19 @@ class TweetHandler :
 {
 public:
 	TweetHandler();
-	TweetHandler(char * account_, int tweetsN_);
-	TweetHandler(char * account_);
+	TweetHandler(char * account_, int tweetsN_ = 0);
 	virtual ~TweetHandler();
 
 	void setAccountSource(char * account_);
 	void setTweetsAmount(int tweetsN_);
-	// Must be called before any other request, to get the token from Twitter.
-	bool createTwitterToken();
-	// To be called after setting new account and/or tweetsN.
+	// To be called after setting new account and/or tweetsN. If constructed with constructor by default, this method bust be called so that there are no errors.
 	void updateURL();
 
+	// Must be called before any other request, to get the token from Twitter.
+	bool createTwitterToken();
 	// To be called after creating the token.
+	bool setUpTwitterConnection();
+	// To be called after setting up Twitter connection.
 	vector<Tweet> getTweetsList();
 
 private:
@@ -42,3 +43,29 @@ private:
 	// This is the page from the API where the object will get the tweets from.
 	string query;
 };
+
+
+/*
+
+HOW TO IMPLEMENT THIS CLASS:
+
+1.a. Construct with TweetHandler(char * account_, int tweetsN_ = 0)
+  b. Construct with TweetHandler() and then call setAccountSource(char * account_) (setTweetsAmount(int tweetsN_) is optional).
+	 After this, call updateURL().
+
+2. Call isOK(). If it returns false, call getError().
+
+3. Create token with createTwitterToken().
+
+4. Set up Twitter connection with setUpTwitterConnection().
+
+5. Write the following while loop:
+	while (isStillReceiving())
+	{
+		myTweetHandler.multiPerform();
+		// Here you can do whatever you want.
+	}
+
+6. Get the information you want with getTweetsList().
+
+*/

@@ -8,6 +8,7 @@ TweetHandler::TweetHandler() : tweetsList(), TwitterAnswer()
 {
 	APIKey = API_KEY;
 	APISecretKey = API_SECRET_KEY;
+	setTweetsAmount(0);
 }
 
 TweetHandler::TweetHandler(char * account_, int tweetsN_) : tweetsList(), TwitterAnswer()
@@ -16,16 +17,6 @@ TweetHandler::TweetHandler(char * account_, int tweetsN_) : tweetsList(), Twitte
 	APISecretKey = API_SECRET_KEY;
 	setAccountSource(account_);
 	setTweetsAmount(tweetsN_);
-
-	updateURL();
-}
-
-TweetHandler::TweetHandler(char * account_) : tweetsList(), TwitterAnswer()
-{
-	APIKey = API_KEY;
-	APISecretKey = API_SECRET_KEY;
-	setAccountSource(account_);
-	setTweetsAmount(0);
 
 	updateURL();
 }
@@ -57,40 +48,44 @@ void TweetHandler::updateURL()
 	setURL((char *)query.c_str());						// Setting URL with parent method.
 }
 
-vector<Tweet> TweetHandler::getTweetsList()
+bool TweetHandler::setUpTwitterConnection()
 {
 	if (token.empty())
 	{
-		return vector<Tweet>();						// If the token was not initialised, an empty vector is returned.
+		return false;						// If the token was not initialised, an empty vector is returned.
 	}
 	else
 	{
 		string aux = "Authorisation: Bearer ";
 		aux += token;
 		setUpMultiPerform((char *)aux.c_str());				// Setting up multi perform with the authentication header as specified by Twitter, using the token.
-		multiPerform();
+		return true;
+	}
+}
 
-		TwitterAnswer = json::parse(response);				// Parsing Twitter's response as a JSON object.
-		try
+vector<Tweet> TweetHandler::getTweetsList()
+{
+	TwitterAnswer = json::parse(response);				// Parsing Twitter's response as a JSON object.
+	try
+	{
+		for (auto tweetElement : TwitterAnswer)
 		{
-			for (auto tweetElement : TwitterAnswer)
-			{
-				string tweet = tweetElement["text"];
-				int extended = tweet.find("https");
-				tweet = tweet.substr(0, extended);			// The URL to continue reading the tweet gets eliminated.
+			string tweet = tweetElement["text"];
+			int extended = tweet.find("https");
+			tweet = tweet.substr(0, extended);			// The URL to continue reading the tweet gets eliminated.
 
-				string twitter = tweetElement["screen_name"];
-				string tweetedAt = tweetElement["created_at"];
+			string twitter = tweetElement["screen_name"];
+			string tweetedAt = tweetElement["created_at"];
 
-				tweetsList.push_back(Tweet(tweet, twitter, tweetedAt));
-
-			}
+			tweetsList.push_back(Tweet(tweet, twitter, tweetedAt));
 		}
-		catch (exception& e)
-		{
-			err.setErrType(ErrType::CHILD_ERROR);
-			err.setErrDetail("Exception raised while parsing Twitter's JSON.");
-		}
+		return tweetsList;
+	}
+	catch (exception& e)
+	{
+		err.setErrType(ErrType::CHILD_ERROR);
+		err.setErrDetail("Exception raised while parsing Twitter's JSON.");
+		return vector<Tweet>();
 	}
 }
 

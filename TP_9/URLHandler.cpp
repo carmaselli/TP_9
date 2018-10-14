@@ -148,7 +148,7 @@ bool URLHandler::isStillReceiving()
 
 bool URLHandler::isOk()
 {
-	if (err.getErrType != ErrType::NO_ERRORS)
+	if (err.getErrType() != ErrType::NO_ERRORS)
 	{
 		return false;
 	}
