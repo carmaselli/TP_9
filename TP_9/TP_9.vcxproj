@@ -119,8 +119,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DisplayUpdater.cpp" />
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="EventGenerator.cpp" />
+    <ClCompile Include="FSM\FSM.cpp" />
+    <ClCompile Include="FSM\States.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParseCMD.cpp" />
+    <ClCompile Include="ParseCMDCallback.cpp" />
     <ClCompile Include="TweetHandler.cpp" />
     <ClCompile Include="URLError.cpp" />
     <ClCompile Include="URLHandler.cpp" />
@@ -130,7 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
+    <ClInclude Include="EventGenerator.h" />
+    <ClInclude Include="FSM\Events.h" />
+    <ClInclude Include="FSM\FSM.h" />
+    <ClInclude Include="FSM\States.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="ParseCMD.h" />
     <ClInclude Include="TweetHandler.h" />
     <ClInclude Include="URLError.h" />
     <ClInclude Include="URLHandler.h" />

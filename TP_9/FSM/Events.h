@@ -12,6 +12,16 @@ class StartEvent : public SC::event<StartEvent>
 
 };
 
+class EventDoneTweets : public SC::event<EventDoneTweets>
+{
+
+};
+
+class ErrorEvent : public SC::event<ErrorEvent>
+{
+	
+};
+
 class EventRefresh : public SC::event<EventRefresh>
 {
 	

@@ -24,28 +24,28 @@
     <ClCompile Include="URLHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DisplayUpdater.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BasicLCD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="delay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ErrLCD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FTDIHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HD44780LCD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="URLError.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tweet.cpp">
+    <ClCompile Include="Error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FSM\FSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FSM\States.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParseCMD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParseCMDCallback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,31 +62,25 @@
     <ClInclude Include="URLHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DisplayUpdater.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BasicLCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="delay.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ErrLCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ftd2xx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FTDIHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HD44780LCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="URLError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tweet.h">
+    <ClInclude Include="Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM\Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM\FSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM\States.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParseCMD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
