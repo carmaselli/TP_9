@@ -120,7 +120,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="FSM\FSM.cpp" />
+    <ClCompile Include="FSM\States.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="TweetHandler.cpp" />
     <ClCompile Include="URLHandler.cpp" />
   </ItemGroup>
@@ -129,7 +132,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
+    <ClInclude Include="FSM\Events.h" />
+    <ClInclude Include="FSM\FSM.h" />
+    <ClInclude Include="FSM\States.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="TweetHandler.h" />
     <ClInclude Include="URLHandler.h" />
   </ItemGroup>
