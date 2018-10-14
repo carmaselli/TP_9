@@ -21,19 +21,31 @@
     <ClCompile Include="TweetHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="URLHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FSM\FSM.cpp">
+    <ClCompile Include="DisplayUpdater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FSM\States.cpp">
+    <ClCompile Include="BasicLCD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.cpp">
+    <ClCompile Include="delay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrLCD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FTDIHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HD44780LCD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="URLError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tweet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,25 +56,37 @@
     <ClInclude Include="TweetHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="URLHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FSM\Events.h">
+    <ClInclude Include="DisplayUpdater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FSM\FSM.h">
+    <ClInclude Include="BasicLCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FSM\States.h">
+    <ClInclude Include="delay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
+    <ClInclude Include="ErrLCD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ftd2xx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FTDIHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HD44780LCD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="URLError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tweet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
